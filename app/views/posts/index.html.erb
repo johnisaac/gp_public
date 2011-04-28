@@ -1,0 +1,10 @@
+<h1> Posts for </h1>
+
+<%= will_paginate %>
+
+<ul class="posts">
+  <% @posts.each do |post|%>
+	<%= render post %><br /><br /></ul>
+  <% end %>
+
+<%= will_paginate %>

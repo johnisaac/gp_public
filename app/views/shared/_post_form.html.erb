@@ -1,0 +1,24 @@
+<%= form_for  [@user, @post], :html => {:multipart => true} do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+	<%= f.label :title, 'Title:' %><br /> 
+    <%= f.text_field :title %><br />
+    <%= f.label :item_name, 'What is it?' %><br /> 
+    <%= f.text_field :item_name %><br />
+    <%= f.label :image, "Choose image"%><br />
+    <%= image_tag(@post.image_url(:avatartiny).to_s) if @post.image? %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %><br />
+    <%= f.label :a_name, "What made it?" %><br /> 
+    <%= f.text_field :a_name %><br />
+    <%= f.label :a_twitter, "What's their twitter?" %><br />
+    <%= f.text_field :a_twitter %><br />
+    <%= f.label :g_from, "Where'd you get it?" %><br /> 
+    <%= f.text_field :g_from %><br />
+    <%= f.label :content, "The plot?" %><br /> 
+    <%= f.text_area :content %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

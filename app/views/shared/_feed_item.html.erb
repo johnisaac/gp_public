@@ -1,0 +1,26 @@
+<tr>
+   <td class="avatar">
+     <%= link_to avatar_for(feed_item.user), feed_item.user %>
+   </td>
+   <td class="post">
+     <span class="title"><%= link_to feed_item.title, feed_item(user_posts_url) %></span><br />
+     <span class="image"><strong>Image: </strong><%= image_tag feed_item.image_url.to_s %></span><br /> 
+  	 <span class="item_name"><%= feed_item.item_name %></span>by:
+ 	 <span class="a_name"><%= feed_item.a_name %></span> | 
+	 <span class="a_twitter"><%= feed_item.a_twitter %></span><br />
+	 gotten from:<span class="g_from"><%= feed_item.g_from %></span><br />
+	 the plot:<span class="content"><%= feed_item.content %></span><br />
+     <span class="timestamp">
+     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+     </span>
+   </td>
+ </td>
+
+ <% if current_user?(feed_item.user) %>
+   <td>
+     <%= link_to "delete", feed_item, :method => :delete,
+                                      :confirm => "You sure?",
+                                      :title => feed_item.content %>
+   </td>
+ <% end %>
+</tr>

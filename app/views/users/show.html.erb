@@ -1,0 +1,22 @@
+<table class="profile" summary="Profile information">
+  <tr>
+	<td class="main">
+	  <h1><%= @user.name %></h1>
+	  <%= render 'follow_form' if user_signed_in? %>
+	    <% unless @user.posts.empty? %>
+	      <table class="posts" summary="User posts">
+	        <%= render @posts %>
+	      </table>
+	    <%= will_paginate @posts %>
+	  <% end %>
+	</td>
+	<td class="sidebar round">
+	  <%= link_to avatar_for(@user), @user.avatar.url %><br />
+	  <strong>Name</strong> <%= @user.name %><br />
+	   <%= @user.bio%><br />
+	  <strong>URL</strong>  <%= link_to user_path(@user), user_path(@user) %>
+	  <strong>Posts</strong> <%= @user.posts.count %>
+	  <%= render 'shared/stats' %>
+	</td>	
+  </tr>	
+</table>

@@ -1,0 +1,31 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:multipart => true}) do |f| %>
+  <%= devise_error_messages! %>
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+  <p><%= f.label :username %><br /> 
+  <%= f.text_field :username %> (Example: http://www.mysite.com/username)<p>
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+    <% if @user.password_required? %>
+      <p><%= f.label :password %><br />
+      <%= f.password_field :password %></p>
+      <p><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></p>
+    <% end %>
+  <p><%= f.submit "Sign up" %></p>
+<% end %>
+
+<div>
+  <a href="/auth/twitter" class="auth_provider">
+    <%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %>
+    Twitter
+  </a>
+  <a href="/auth/facebook" class="auth_provider">
+    <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook" %>
+    Facebook
+  </a>
+</div>
+
+<%= render :partial => "devise/shared/links" %>

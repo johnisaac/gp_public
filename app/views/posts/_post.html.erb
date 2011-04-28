@@ -1,0 +1,22 @@
+<tr>
+  <td class="post">
+     <span class="title"><strong><%= link_to post.title, post %></strong></span><br />
+	 <span class="image"><strong>Image: </strong><%= image_tag post.image_url.to_s %></span><br />
+	 <span class="a_name"><strong>Artist: </strong><%= post.a_name %></span><br /> 
+	 <span class="item_name"><strong>Title: </strong><%= post.item_name %></span><br />
+	 <span class="a_twitter"><strong>Twitter: </strong><%= post.a_twitter %></span><br />
+	 <span class="g_from"><strong>Gotten From: </strong><%= post.g_from %></span><br />
+	 <span class="content"><strong>Plot: </strong><%= post.content %></span><br />
+     <span class="timestamp">
+      Posted <%= time_ago_in_words(post.created_at) %> ago.
+    </span>
+  </td>
+  
+  <% if current_user?(post.user)%>
+    <td>
+      <%= link_to "delete", post, :method => :delete,
+                                         :confirm => "You sure?",
+                                         :title => post.content %>
+    </td>
+  <%end%>
+</tr>

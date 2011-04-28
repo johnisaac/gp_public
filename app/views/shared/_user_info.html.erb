@@ -1,0 +1,7 @@
+<div class="user_info">
+  <a href="<%= user_path(current_user)  %>"><%= avatar_for current_user %><br />
+    <span class="user_name"><%= current_user.name %></span><br />
+    <span class="user_bio"><%= current_user.bio %><br />
+    <span class="spportposts"><%= pluralize(current_user.posts.count, "Posts") %></span>
+    </a>
+</div>

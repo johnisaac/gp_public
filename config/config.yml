@@ -1,0 +1,43 @@
+production:
+  
+  :facebook:
+    :app_id: "193394844038034"
+    :app_secret: "3396538a4985637f6a22906299176ff5"
+    
+    
+  :twitter:
+      :consumer_key: "17GCz7J9KHLb68EFRShbVg"
+      :consumer_secret: "YqaFQIqUpoeU3vQR0Y7Wi40nIcJEAnwS07BlTd9Qps"
+      :oauth_token: "183911390-LKLSxPhSJ1INKhEt7QbQBuRubRMk0X6X2CkBaeU9"
+      :oauth_token_secret: "imr0DQMxDsf7V2hlL6JKKQKCPb0cYUhjsPRZkDMtA"
+      
+
+development:
+
+    :facebook:
+        :app_id: "193394844038034"
+        :app_secret: "3396538a4985637f6a22906299176ff5"
+
+
+    :twitter:
+        :consumer_key: "17GCz7J9KHLb68EFRShbVg"
+        :consumer_secret: "YqaFQIqUpoeU3vQR0Y7Wi40nIcJEAnwS07BlTd9Qps"
+        :oauth_token: "183911390-LKLSxPhSJ1INKhEt7QbQBuRubRMk0X6X2CkBaeU9"
+        :oauth_token_secret: "imr0DQMxDsf7V2hlL6JKKQKCPb0cYUhjsPRZkDMtA"
+        
+        
+test:
+    
+    :facebook:
+        :app_id: "193394844038034"
+        :app_secret: "3396538a4985637f6a22906299176ff5"
+
+
+    :twitter:
+        :consumer_key: "17GCz7J9KHLb68EFRShbVg"
+        :consumer_secret: "YqaFQIqUpoeU3vQR0Y7Wi40nIcJEAnwS07BlTd9Qps"
+        :oauth_token: "183911390-LKLSxPhSJ1INKhEt7QbQBuRubRMk0X6X2CkBaeU9"
+        :oauth_token_secret: "imr0DQMxDsf7V2hlL6JKKQKCPb0cYUhjsPRZkDMtA"
+    
+
+ 

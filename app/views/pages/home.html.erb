@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="post">Welcome!</h1>
+         <%= render 'shared/post_form'%>
+		 <%= render 'shared/feed'%>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+   <%= render 'shared/stats' %>
+      </td>
+    </tr>
+  </table>
+
+
+
+<% else %>
+
+
+
+<h1>Hi, you probably shouldn't be here yet'</h1>
+<p>
+  This was made by
+  <a href="http://twitter.com/drewberkowitz">Drew Berkowitz</a>
+</p>
+
+<%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
+
+<% end %>
