@@ -14,11 +14,16 @@
 #
 
 one:
-  user_id: 1
-  provider: MyString
-  uid: MyString
+  user_id: 980190962
+  provider: facebook
+  uid: 12345
 
 two:
-  user_id: 1
-  provider: MyString
-  uid: MyString
+  user_id: 980190962
+  provider: twitter
+  uid: 123456
+  
+three:
+  user_id: 298486374
+  provider: facebook
+  uid: 76548

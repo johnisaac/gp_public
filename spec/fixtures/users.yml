@@ -1,0 +1,9 @@
+one:
+    email: "fred1.flintstone@gmail.com"
+    name : "Fred1 Flintstone"
+    username: "flintstone"
+    
+two:
+    email: "baby.flintstone@gmail.com"
+    name: "Baby Flintstone"
+    username: "baby_flintstone"

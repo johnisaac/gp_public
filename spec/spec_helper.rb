@@ -25,8 +25,33 @@ RSpec.configure do |config|
   # instead of true.
   
   config.use_transactional_fixtures = true
-
+  OmniAuth.config.test_mode = true
+  
+  OmniAuth.config.add_mock(:facebook, {
+    "provider" => "facebook", "uid" => "1234", "credentials" => { "token" => "193394844038034", "secret" => "3396538a4985637f6a22906299176ff5" }, "user_info" => { "email" => "bob@nobody.com", "name" => "Bob" } 
+  })
+  
+  OmniAuth.config.add_mock(:existing_facebook, {
+    "provider" => "facebook", "uid" => "12345", "credentials" => { "token" => "193394844038034", "secret" => "3396538a4985637f6a22906299176ff5" }, "user_info" => { "email" => "fred1.flinstone@gmail.com", "name" => "Fred Flinstone" } 
+  })
+  
+  OmniAuth.config.add_mock(:existing_login, {
+    "provider" => "facebook", "uid" => "1234567", "credentials" => { "token" => "193394844038034", "secret" => "3396538a4985637f6a22906299176ff5" }, "user_info" => { "email" => "wilma.flinstone@gmail.com", "name" => "Wilma Flinstone" } 
+  })
+  
+  OmniAuth.config.add_mock(:twitter, { 
+    :provider => "twitter", :user_info => {:name => "Joe Smith", :nickname => 'joesmith'}, :uid => '123456790' 
+  })
+  
+  OmniAuth.config.add_mock(:fb_without_twitter, {
+    :provider => "twitter", :user_info => {:name => "Baby Flinstone", :nickname => 'baby'}, :uid => '765489' 
+  })
+    
+  OmniAuth.config.add_mock(:existing_twitter, {
+    :provider => "twitter", :user_info => {:name => "Fred Flinstone", :nickname => 'fred'}, :uid => '123456' 
+  })
+  
   def test_sign_in(user)
       controller.sign_in(user)
-    end 
+  end 
 end
